@@ -1,8 +1,10 @@
 <div class="row">
   <div class="col-md-3">
     <h2>{{row.full_name}}</h2>
+    <p>Years Played: {{row.career_length}}</p>
     <p>Average Yearly Points: {{row.average_total_points}}</p>
     <p>Average Weekly Points: {{row.average_regular_season_score}}</p>
+    <p>Career Record: {{row.career_wins}}-{{row.career_losses}}</p>
   </div>
   <div class="col-md-9">
     {{new-chart data=row.regular_season_scores_array name=row.full_name}}
@@ -25,7 +27,7 @@
       <tbody>
         {{#each row.teams as |team_model|}}
         <tr>
-          <td>{{team_model.league_year}}</td>
+          <td class="col-xs-1">{{team_model.league_year}}</td>
           <td>{{team_model.name}}</td>
           <td>{{team_model.points_for}}</td>
           <td>{{team_model.points_against}}</td>

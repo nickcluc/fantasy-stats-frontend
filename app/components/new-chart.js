@@ -38,12 +38,6 @@ export default Ember.Component.extend({
                    title: {
                        text: null
                    }
-               },
-               subtitle: {
-                   text: null
-               },
-               credits: {
-                   enabled: false
                }
            }
        }]

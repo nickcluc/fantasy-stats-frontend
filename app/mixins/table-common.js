@@ -60,7 +60,7 @@ export default Mixin.create({
           canLoadMore: true,
           page: 0
         });
-        this.get('model').clear();
+        this.get('model').toArray().clear();
       }
     }
   }

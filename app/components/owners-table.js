@@ -11,8 +11,14 @@ export default Component.extend(TableCommon, {
       label: 'Last Name',
       valuePath: 'last_name'
     }, {
-      label: 'Total Points',
+      label: 'Total Career Points',
       valuePath: 'total_points'
+    }, {
+      label: 'Career Wins',
+      valuePath: 'career_wins'
+    }, {
+      label: 'Career Losses',
+      valuePath: 'career_losses'
     }];
   })
 });

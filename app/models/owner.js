@@ -9,5 +9,8 @@ export default DS.Model.extend({
   average_regular_season_score: DS.attr('number'),
   average_total_points: DS.attr('number'),
   regular_season_scores_array: DS.attr(),
-  teams:  DS.hasMany()
+  teams:  DS.hasMany(),
+  career_length: DS.attr(),
+  career_wins: DS.attr(),
+  career_losses: DS.attr()
 })
