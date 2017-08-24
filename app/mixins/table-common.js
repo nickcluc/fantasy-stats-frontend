@@ -11,8 +11,8 @@ export default Mixin.create({
 
   page: 0,
   limit: 10,
-  dir: 'asc',
-  sort: 'first_name',
+  dir: 'desc',
+  sort: 'career_wins',
 
   isLoading: computed.oneWay('fetchRecords.isRunning'),
   canLoadMore: true,
@@ -41,20 +41,21 @@ export default Mixin.create({
     let records = yield this.get('store').query('owner', this.getProperties(['page', 'limit', 'sort', 'dir']));
     this.get('model').pushObjects(records.toArray());
     this.set('meta', records.get('meta'));
-    this.set('canLoadMore', !isEmpty(records));
+    this.set('canLoadMore', false);
   }).restartable(),
 
   actions: {
     onScrolledToBottom() {
+      console.log(this.get('canLoadMore'));
       if (this.get('canLoadMore')) {
         this.incrementProperty('page');
         this.get('fetchRecords').perform();
+        this.setProperties({canLoadMore: false});
       }
     },
 
     onColumnClick(column) {
       if (column.sorted) {
-        console.log(column.get('valuePath'));
         this.setProperties({
           dir: column.ascending ? 'asc' : 'desc',
           sort: column.get('valuePath'),
