@@ -11,6 +11,9 @@ export default Component.extend(TableCommon, {
       label: 'Last Name',
       valuePath: 'last_name'
     }, {
+      label: 'Seasons',
+      valuePath: 'career_length'
+    },  {
       label: 'Total Career Points For',
       valuePath: 'total_points'
     }, {
