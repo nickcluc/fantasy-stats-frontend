@@ -12,7 +12,7 @@ export default Mixin.create({
   page: 0,
   limit: 10,
   dir: 'desc',
-  sort: 'career_wins',
+  sort: 'total_points',
 
   isLoading: computed.oneWay('fetchRecords.isRunning'),
   canLoadMore: true,
