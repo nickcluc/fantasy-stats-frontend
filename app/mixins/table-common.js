@@ -12,7 +12,7 @@ export default Mixin.create({
   page: 0,
   limit: 10,
   dir: 'asc',
-  sort: 'firstName',
+  sort: 'first_name',
 
   isLoading: computed.oneWay('fetchRecords.isRunning'),
   canLoadMore: true,
@@ -54,13 +54,14 @@ export default Mixin.create({
 
     onColumnClick(column) {
       if (column.sorted) {
+        console.log(column.get('valuePath'));
         this.setProperties({
           dir: column.ascending ? 'asc' : 'desc',
           sort: column.get('valuePath'),
           canLoadMore: true,
           page: 0
         });
-        this.get('model').toArray().clear();
+        this.get('model').clear();
       }
     }
   }
