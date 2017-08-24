@@ -11,14 +11,23 @@ export default Component.extend(TableCommon, {
       label: 'Last Name',
       valuePath: 'last_name'
     }, {
-      label: 'Total Career Points',
+      label: 'Total Career Points For',
       valuePath: 'total_points'
+    }, {
+      label: 'Total Career Points Against',
+      valuePath: 'total_points_against'
     }, {
       label: 'Career Wins',
       valuePath: 'career_wins'
     }, {
       label: 'Career Losses',
       valuePath: 'career_losses'
+    }, {
+      label: 'Highest One Week Total',
+      valuePath: 'max_score'
+    }, {
+      label: 'Lowest One Week Total',
+      valuePath: 'min_score'
     }];
   })
 });
