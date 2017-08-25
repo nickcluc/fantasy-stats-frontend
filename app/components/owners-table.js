@@ -15,10 +15,12 @@ export default Component.extend(TableCommon, {
       valuePath: 'career_length'
     },  {
       label: 'Total Career Points For',
-      valuePath: 'total_points'
+      valuePath: 'total_points',
+      cellComponent: 'number-cell'
     }, {
       label: 'Total Career Points Against',
-      valuePath: 'total_points_against'
+      valuePath: 'total_points_against',
+      cellComponent: 'number-cell'
     }, {
       label: 'Career Wins',
       valuePath: 'career_wins'
