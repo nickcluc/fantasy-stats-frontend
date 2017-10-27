@@ -8,6 +8,8 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('owners');
+  this.route('power-ranks');
+  this.route('rower-ranks');
 });
 
 export default Router;

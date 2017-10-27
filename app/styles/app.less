@@ -218,3 +218,129 @@ form .form-group {
     }
   }
 }
+@color_1: #999999;
+@color_2: #fff;
+
+/*!
+ * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/template-overviews/simple-sidebar)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/blob/master/LICENSE)
+ */
+/* Sidebar Styles */
+body {
+	overflow-x: hidden;
+}
+#wrapper {
+  padding-left: 250px;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+  width: 250px;
+}
+#wrapper.toggled {
+  padding-left: 0;
+	#sidebar-wrapper {
+    width: 0;
+	}
+	#page-content-wrapper {
+		position: absolute;
+	}
+}
+#sidebar-wrapper {
+	z-index: 1000;
+	position: fixed;
+	left: 250px;
+  width: 250px;
+	height: 100%;
+	margin-left: -250px;
+	overflow-y: auto;
+	background: #000;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+#page-content-wrapper {
+	width: 100%;
+	position: absolute;
+  margin-right: -250px;
+	padding: 15px;
+}
+.sidebar-nav {
+	position: absolute;
+	top: 0;
+	width: 250px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	li {
+		text-indent: 20px;
+		line-height: 40px;
+		a {
+			display: block;
+			text-decoration: none;
+			color: @color_1;
+			&:hover {
+				text-decoration: none;
+				color: @color_2;
+				background: rgba(255, 255, 255, 0.2);
+			}
+			&:active {
+				text-decoration: none;
+			}
+			&:focus {
+				text-decoration: none;
+			}
+		}
+	}
+	>.sidebar-brand {
+		height: 65px;
+		font-size: 18px;
+		line-height: 60px;
+		a {
+			color: @color_1;
+			&:hover {
+				color: @color_2;
+				background: none;
+			}
+		}
+	}
+}
+@media (min-width:768px) {
+	#wrapper {
+    padding-left: 250px;
+	}
+	#wrapper.toggled {
+    padding-left: 0;
+		#sidebar-wrapper {
+      width: 0;
+		}
+		#page-content-wrapper {
+      padding: 20px;
+      position: relative;
+		}
+	}
+	#sidebar-wrapper {
+    width: 250px;
+	}
+	#page-content-wrapper {
+    position: relative;
+    margin-right: 0;
+	}
+}
+
+.slide {
+  height: 90%;
+}
+
+.slide-container {
+  height: 700px;
+}
+
+.poopy {
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.80), rgba(255, 255, 255, 0.80)),
+    url('https://emojipedia-us.s3.amazonaws.com/socialmedia/apple/96/pile-of-poo_1f4a9.png');
+  background-size: 100%;
+}
