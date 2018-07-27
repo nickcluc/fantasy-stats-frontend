@@ -36,7 +36,6 @@ export default Mixin.create({
 
     this.set('table', table);
   },
-
   fetchRecords: task(function*() {
     let records = yield this.get('store').query('owner', this.getProperties(['page', 'limit', 'sort', 'dir']));
     this.get('model').pushObjects(records.toArray());

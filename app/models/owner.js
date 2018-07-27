@@ -1,5 +1,4 @@
 import DS from 'ember-data';
-import { belongsTo, hasMany } from "ember-data/relationships";
 
 export default DS.Model.extend({
   first_name: DS.attr('string'),
@@ -10,7 +9,7 @@ export default DS.Model.extend({
   average_regular_season_score: DS.attr('number'),
   average_total_points: DS.attr('number'),
   regular_season_scores_array: DS.attr(),
-  teams:  DS.hasMany(),
+  teams:  DS.hasMany('teams'),
   career_length: DS.attr(),
   career_wins: DS.attr('number'),
   career_losses: DS.attr('number'),

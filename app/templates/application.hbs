@@ -3,29 +3,13 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="#">
-                        QFS Fantasy Football
-                    </a>
-                </li>
-                <li>
-                  {{#link-to "owners"}}Owners Dashboard{{/link-to}}
-                </li>
-                <li>
-                  {{#link-to "power-ranks"}}Rankings{{/link-to}}
-                </li>
-            </ul>
-        </div>
+
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
         <div id="page-content-wrapper">
           <div class='container'>
-            <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">{{fa-icon "bars" size=2 ariaLabel="Click Me"}}</a>
             {{outlet}}
-
           </div>
         </div>
         <!-- /#page-content-wrapper -->
