@@ -1,7 +1,11 @@
-<div class="container">
-  <h1>QFS Historical Performance</h1>
+  {{#paper-card as |card|}}
 
-  <h2>Owners</h2>
-  <p>Click on an owner to see more!</p>
-  {{owners-table model=model}}
-</div>
+    {{#card.title as |title|}}
+      {{#title.text as |text|}}
+      {{/title.text}}
+    {{/card.title}}
+
+    {{#card.content}}
+      {{owner-table model=model}}
+    {{/card.content}}
+  {{/paper-card}}

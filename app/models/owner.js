@@ -8,11 +8,11 @@ export default DS.Model.extend({
   total_points_against: DS.attr('number'),
   average_regular_season_score: DS.attr('number'),
   average_total_points: DS.attr('number'),
-  regular_season_scores_array: DS.attr(),
-  teams:  DS.hasMany('teams'),
+  team_matchups: DS.hasMany('team_matchup'),
+  teams:  DS.hasMany('team'),
   career_length: DS.attr(),
   career_wins: DS.attr('number'),
   career_losses: DS.attr('number'),
   min_score: DS.attr('number'),
-  max_score: DS.attr('number')
+  max_score: DS.attr('number'),
 })

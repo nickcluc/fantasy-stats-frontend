@@ -1,0 +1,26 @@
+{{#paper-data-table sortProp="league_year" sortDir="desc" selectable=true as |table|}}
+
+  {{#table.head as |head|}}
+    {{#head.column sortProp="league_year"}}Year{{/head.column}}
+    {{#head.column sortProp="name"}}Team Name{{/head.column}}
+    {{#head.column sortProp="points_for" numeric=true}}Points For{{/head.column}}
+    {{#head.column sortProp="points_against" numeric=true}}Points Against{{/head.column}}
+    {{#head.column sortProp="avg-points" numeric=true}}Avg. Weekly Points{{/head.column}}
+    {{#head.column sortProp="wins" numeric=true}}Wins{{/head.column}}
+    {{#head.column sortProp="losses" numeric=true}}Losses{{/head.column}}
+  {{/table.head}}
+
+  {{#table.body as |body|}}
+    {{#each (sort-by table.sortDesc teams) as |team_model|}}
+      {{#body.row team_model as |row|}}
+        {{#row.cell numeric=true}}{{team_model.league_year}}{{/row.cell}}
+        {{#row.cell}}{{team_model.name}}{{/row.cell}}
+        {{#row.cell numeric=true}}{{format-number team_model.points_for precision=2}}{{/row.cell}}
+        {{#row.cell numeric=true}}{{format-number team_model.points_against precision=2}}{{/row.cell}}
+        {{#row.cell numeric=true}}{{avg-pts team_model.points_for team_model.wins team_model.losses}}{{/row.cell}}
+        {{#row.cell numeric=true}}{{team_model.wins}}{{/row.cell}}
+        {{#row.cell numeric=true}}{{team_model.losses}}{{/row.cell}}
+      {{/body.row}}
+    {{/each}}
+  {{/table.body}}
+{{/paper-data-table}}

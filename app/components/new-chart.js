@@ -1,6 +1,5 @@
-//components/pie-chart.js
-import Ember from 'ember';
 
+import Ember from 'ember';
 export default Ember.Component.extend({
 
   classNames: ['chart'],
@@ -9,39 +8,30 @@ export default Ember.Component.extend({
       title: {
         text: "Regular Season Scores"
       },
+      xAxis: {
+        type: 'datetime',
+        labels: {
+          formatter: function () {
+              return Highcharts.dateFormat('%m/%d', this.value);
+          }
+        }
+      },
       plotOptions: {
       },
       series: [{
         type: 'line',
         name: this.get('name'),
-        data: this.get('data')
+        data: this.get('data').map(matchup => [Date.parse(matchup.matchup_date), matchup.score])
+      },{
+        type: 'line',
+        name: 'Opponents',
+        data: this.get('data').map(matchup => [Date.parse(matchup.matchup_date), matchup.opponent_score]),
+        lineWidth: 0.5,
+        color: 'red'
       }],
       credits: {
         enabled: true
       },
-      responsive: {
-       rules: [{
-           condition: {
-               maxWidth: 500
-           },
-           chartOptions: {
-               legend: {
-                   align: 'center',
-                   layout: 'horizontal'
-               },
-               yAxis: {
-                   labels: {
-                       align: 'left',
-                       x: 0,
-                       y: -5
-                   },
-                   title: {
-                       text: null
-                   }
-               }
-           }
-       }]
-      }
     });
   },
 
@@ -58,5 +48,5 @@ export default Ember.Component.extend({
 
   willDestroyElement() {
     this.$().highcharts().destroy();
-  }
+  },
 });

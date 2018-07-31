@@ -1,0 +1,16 @@
+$primary: "teal";
+$accent: "light-green";
+$warn: "pink";
+
+// If desired, import the palettes and modify to your liking.
+@import "color-palette";
+$color-teal: map-merge($color-teal, ('contrastDefaultColor':  $light-contrast-color));
+$color-light-green: map-merge($color-light-green, ('contrastDefaultColor':  $light-contrast-color));
+
+@import 'ember-paper';
+@import 'paper-data-table';
+@import 'ember-paper-expansion-panel';
+
+.ember-application {
+  background-color: #e0e0e0;
+}
