@@ -1,5 +1,6 @@
 
 import Ember from 'ember';
+import Highcharts from 'ember-highcharts';
 export default Ember.Component.extend({
 
   classNames: ['chart'],
