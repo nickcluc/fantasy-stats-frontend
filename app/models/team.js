@@ -7,5 +7,6 @@ export default DS.Model.extend({
   points_for: DS.attr(),
   points_against: DS.attr(),
   wins: DS.attr(),
-  losses: DS.attr()
+  losses: DS.attr(),
+  team_matchups: DS.hasMany('team_matchup'),
 })

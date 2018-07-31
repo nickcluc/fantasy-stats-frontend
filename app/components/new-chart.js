@@ -6,7 +6,7 @@ export default Ember.Component.extend({
   renderChart() {
     return this.$().highcharts({
       title: {
-        text: "Regular Season Scores"
+        text: this.get('year') + " Regular Season"
       },
       xAxis: {
         type: 'datetime',
@@ -19,15 +19,16 @@ export default Ember.Component.extend({
       plotOptions: {
       },
       series: [{
-        type: 'line',
+        type: 'spline',
         name: this.get('name'),
-        data: this.get('data').map(matchup => [Date.parse(matchup.matchup_date), matchup.score])
+        data: this.get('data').map(matchup => [Date.parse(matchup.matchup_date), matchup.score]),
+        color: '#03dac6'
       },{
-        type: 'line',
+        type: 'spline',
         name: 'Opponents',
         data: this.get('data').map(matchup => [Date.parse(matchup.matchup_date), matchup.opponent_score]),
         lineWidth: 0.5,
-        color: 'red'
+        color: '#C51162'
       }],
       credits: {
         enabled: true

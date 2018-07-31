@@ -14,3 +14,7 @@ $color-light-green: map-merge($color-light-green, ('contrastDefaultColor':  $lig
 .ember-application {
   background-color: #e0e0e0;
 }
+
+.player-dialog {
+  min-width: 800px;
+}

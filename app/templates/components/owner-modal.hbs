@@ -1,4 +1,4 @@
-{{#paper-dialog class="flex-88" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
+{{#paper-dialog class="player-dialog" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true fullscreen=true}}
   {{#paper-toolbar}}
     {{#paper-toolbar-tools}}
       <h2>{{owner.full_name}}</h2>
@@ -34,12 +34,28 @@
         {{else if (eq current.tab 1)}}
           <div class="layout-row flex">
             <div class="flex">
+              {{#paper-tabs
+                center=center
+                stretch=stretch
+                borderBottom=borderBottom
+                selected=selectedStatYearTab
+                onChange=(action (mut selectedStatYearTab)) as |tabs|}}
+                {{#each owner.teams as |team|}}
+                  {{#tabs.tab}}
+                    {{team.league_year}}
+                  {{/tabs.tab}}
+                {{/each}}
+              {{/paper-tabs}}
               {{#if (await owner.team_matchups)}}
-                {{new-chart data=owner.team_matchups name=owner.full_name}}
-              {{else}}
-                <div style='width:600px'>
-
-                </div>
+              {{#liquid-bind (hash tab=selectedStatYearTab) class="md-padding" as |chart_current|}}
+                {{#each owner.teams as |team index|}}
+                    {{#if (eq chart_current.tab index)}}
+                      <div class="chart_container">
+                        {{new-chart data=team.team_matchups name=team.name year=team.league_year}}
+                      </div>
+                    {{/if}}
+                  {{/each}}
+                {{/liquid-bind}}
               {{/if}}
             </div>
           </div>
