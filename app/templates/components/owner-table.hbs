@@ -4,7 +4,7 @@
 
 {{#paper-card as |card|}}
   {{#card.content}}
-    {{#paper-data-table sortProp="name" sortDir="desc" selectable=true as |table|}}
+    {{#paper-data-table sortProp="career_wins" sortDir="desc" selectable=true as |table|}}
 
       {{#table.head as |head|}}
         {{#head.column sortProp="first_name"}}First Name{{/head.column}}
@@ -21,8 +21,8 @@
       {{#table.body as |body|}}
         {{#each (sort-by table.sortDesc model) as |owner|}}
           {{#body.row onClick=(action 'expand' owner) as |row|}}
-            {{#row.cell}}{{owner.first_name}}{{/row.cell}}
-            {{#row.cell}}{{owner.last_name}}{{/row.cell}}
+            {{#row.cell}}{{capitalize owner.first_name}}{{/row.cell}}
+            {{#row.cell}}{{capitalize owner.last_name}}{{/row.cell}}
             {{#row.cell numeric=true}}{{owner.career_length}}{{/row.cell}}
             {{#row.cell numeric=true}}{{owner.total_points}}{{/row.cell}}
             {{#row.cell numeric=true}}{{owner.total_points_against}}{{/row.cell}}
