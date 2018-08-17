@@ -20,7 +20,7 @@
       {{/each}}
       {{#each owner.third_places as |season|}}
         <div class="flex trophy">
-          {{fa-icon "star" size='2x' class='third'}}
+          {{fa-icon "award" size='2x' class='third'}}
           <h4>{{season.league_year}}</h4>
         </div>
       {{/each}}
@@ -35,7 +35,7 @@
   {{#card.actions}}
     {{#paper-button}}Championship: {{fa-icon "trophy" size='xs' class='first'}}{{/paper-button}}
     {{#paper-button}}Runner Up: {{fa-icon "award" size='xs'class='second'}}{{/paper-button}}
-    {{#paper-button}}Third: {{fa-icon "star" size='xs' class='third'}}{{/paper-button}}
+    {{#paper-button}}Third: {{fa-icon "award" size='xs' class='third'}}{{/paper-button}}
     {{#paper-button}}Last: {{fa-icon "poo" size='xs' class='last'}}{{/paper-button}}
   {{/card.actions}}
 {{/paper-card}}
