@@ -1,9 +1,7 @@
 {{#paper-card
   class="player-dialog"
   onClose=(action "closeDialog" "cancel")
-  origin=dialogOrigin
-  clickOutsideToClose=true
-  fullscreen=true as |card|}}
+  origin=dialogOrigin as |card|}}
 
   {{#card.title as |title|}}
     {{#title.text as |text|}}
