@@ -33,9 +33,13 @@
     </div>
   {{/card.content}}
   {{#card.actions}}
-    {{#paper-button}}Championship: {{fa-icon "trophy" size='xs' class='first'}}{{/paper-button}}
-    {{#paper-button}}Runner Up: {{fa-icon "award" size='xs'class='second'}}{{/paper-button}}
-    {{#paper-button}}Third: {{fa-icon "award" size='xs' class='third'}}{{/paper-button}}
-    {{#paper-button}}Last: {{fa-icon "poo" size='xs' class='last'}}{{/paper-button}}
+    <div class="layout-row  layout-align-right-center flex">
+      <div class="flex">
+        {{#paper-button}}Championship: {{fa-icon "trophy" size='xs' class='first'}}{{/paper-button}}
+        {{#paper-button}}Runner Up: {{fa-icon "award" size='xs'class='second'}}{{/paper-button}}
+        {{#paper-button}}Third: {{fa-icon "award" size='xs' class='third'}}{{/paper-button}}
+        {{#paper-button}}Last: {{fa-icon "poo" size='xs' class='last'}}{{/paper-button}}
+      </div>
+    </div>
   {{/card.actions}}
 {{/paper-card}}
