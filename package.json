@@ -41,6 +41,7 @@
     "ember-google-charts": "^1.5.3",
     "ember-highcharts": "^1.0.0",
     "ember-load-initializers": "^1.1.0",
+    "ember-math-helpers": "^2.6.0",
     "ember-paper": "^1.0.0-beta.8",
     "ember-paper-expansion-panel": "^0.0.3",
     "ember-promise-helpers": "^1.0.6",

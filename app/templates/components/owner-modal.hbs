@@ -22,10 +22,10 @@
       selected=selectedBasicTab
       onChange=(action (mut selectedBasicTab)) as |tabs|}}
       {{#tabs.tab}}
-        Head to Head
+        Seasons
       {{/tabs.tab}}
       {{#tabs.tab}}
-        Seasons
+        Head to Head
       {{/tabs.tab}}
       {{#tabs.tab}}
         Sabermetrics
@@ -37,9 +37,9 @@
 
     {{#liquid-bind (hash tab=selectedBasicTab) class="md-padding" as |current|}}
         {{#if (eq current.tab 0)}}
-          {{head-to-head-table model=model}}
-        {{else if (eq current.tab 1)}}
           {{owner-teams-table teams=owner.teams}}
+        {{else if (eq current.tab 1)}}
+          {{head-to-head-table model=owner.head_to_head_vs_all}}
         {{else if (eq current.tab 2)}}
           {{#if (await owner.team_matchups)}}
             <div class="layout-row flex">

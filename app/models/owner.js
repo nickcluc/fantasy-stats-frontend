@@ -21,4 +21,5 @@ export default DS.Model.extend({
   last_places: DS.hasMany('last_places', {async: true, polymorphic: true}),
   seasons: DS.hasMany('seasons', {async: true, polymorphic: true}),
   head_to_head_vs_all: DS.attr(),
+  opponents: DS.hasMany('opponents', {async: true, polymorphic: true}),
 })
