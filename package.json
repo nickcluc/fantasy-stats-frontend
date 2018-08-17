@@ -15,6 +15,8 @@
     "test": "ember test"
   },
   "devDependencies": {
+    "@fortawesome/ember-fontawesome": "^0.1.3",
+    "@fortawesome/free-solid-svg-icons": "^5.2.0",
     "active-model-adapter": "^2.2.0",
     "broccoli-asset-rev": "^2.7.0",
     "ember-ajax": "^3.1.0",
@@ -36,7 +38,6 @@
     "ember-concurrency": "^0.8.19",
     "ember-data": "^3.3.1",
     "ember-export-application-global": "^2.0.0",
-    "ember-font-awesome": "^4.0.0-rc.4",
     "ember-google-charts": "^1.5.3",
     "ember-highcharts": "^1.0.0",
     "ember-load-initializers": "^1.1.0",

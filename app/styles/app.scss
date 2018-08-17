@@ -18,3 +18,23 @@ $color-light-green: map-merge($color-light-green, ('contrastDefaultColor':  $lig
 .player-dialog {
   min-width: 800px;
 }
+
+.trophy {
+  text-align: center;
+}
+
+.first {
+  color: #D9A441;
+}
+
+.second {
+  color: #A8A8A8;
+}
+
+.third {
+  color: #965A38;
+}
+
+.last {
+  color: #4C4105;
+}

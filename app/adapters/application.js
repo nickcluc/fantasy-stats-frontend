@@ -8,8 +8,8 @@ export default DS.JSONAPIAdapter.extend({
     return Ember.String.pluralize(underscored);
   },
   coalesceFindRequests: true,
-  // findMany(store, type, ids, snapshots) {
-  //   // ids === ['21', '22', '23']
-  //   return this._super(...arguments);
-  // },
+  findMany(store, type, ids, snapshots) {
+    // ids === ['21', '22', '23']
+    return this._super(...arguments);
+  },
 });

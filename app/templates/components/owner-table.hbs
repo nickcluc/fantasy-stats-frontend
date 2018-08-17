@@ -1,35 +1,39 @@
-{{#paper-data-table sortProp="name" sortDir="desc" selectable=true as |table|}}
+{{#if rowExpanded}}
+  {{owner-modal owner=owner rowExpanded=rowExpanded}}
+{{/if}}
 
-  {{#table.head as |head|}}
-    {{#head.column sortProp="first_name"}}First Name{{/head.column}}
-    {{#head.column sortProp="last_name"}}Last Name{{/head.column}}
-    {{#head.column sortProp="career_length" numeric=true}}Seasons{{/head.column}}
-    {{#head.column sortProp="total_points" numeric=true}}Points For{{/head.column}}
-    {{#head.column sortProp="total_points_against" numeric=true}}Points Against{{/head.column}}
-    {{#head.column sortProp="career_wins" numeric=true}}Wins{{/head.column}}
-    {{#head.column sortProp="career_losses" numeric=true}}Losses{{/head.column}}
-    {{#head.column sortProp="max_score" numeric=true}}Hi Score{{/head.column}}
-    {{#head.column sortProp="min_score" numeric=true}}Low Score{{/head.column}}
-  {{/table.head}}
+{{#paper-card as |card|}}
+  {{#card.content}}
+    {{#paper-data-table sortProp="name" sortDir="desc" selectable=true as |table|}}
 
-  {{#table.body as |body|}}
-    {{#each (sort-by table.sortDesc model) as |owner|}}
-      {{#body.row onClick=(action 'expand' owner) as |row|}}
-        {{#row.cell}}{{owner.first_name}}{{/row.cell}}
-        {{#row.cell}}{{owner.last_name}}{{/row.cell}}
-        {{#row.cell numeric=true}}{{owner.career_length}}{{/row.cell}}
-        {{#row.cell numeric=true}}{{owner.total_points}}{{/row.cell}}
-        {{#row.cell numeric=true}}{{owner.total_points_against}}{{/row.cell}}
-        {{#row.cell numeric=true}}{{owner.career_wins}}{{/row.cell}}
-        {{#row.cell numeric=true}}{{owner.career_losses}}{{/row.cell}}
-        {{#row.cell numeric=true}}{{owner.max_score}}{{/row.cell}}
-        {{#row.cell numeric=true}}{{owner.min_score}}{{/row.cell}}
-      {{/body.row}}
-    {{/each}}
-  {{/table.body}}
+      {{#table.head as |head|}}
+        {{#head.column sortProp="first_name"}}First Name{{/head.column}}
+        {{#head.column sortProp="last_name"}}Last Name{{/head.column}}
+        {{#head.column sortProp="career_length" numeric=true}}Seasons{{/head.column}}
+        {{#head.column sortProp="total_points" numeric=true}}Points For{{/head.column}}
+        {{#head.column sortProp="total_points_against" numeric=true}}Points Against{{/head.column}}
+        {{#head.column sortProp="career_wins" numeric=true}}Wins{{/head.column}}
+        {{#head.column sortProp="career_losses" numeric=true}}Losses{{/head.column}}
+        {{#head.column sortProp="max_score" numeric=true}}Hi Score{{/head.column}}
+        {{#head.column sortProp="min_score" numeric=true}}Low Score{{/head.column}}
+      {{/table.head}}
 
-  {{#if rowExpanded}}
-    {{owner-modal owner=owner rowExpanded=rowExpanded}}
-  {{/if}}
+      {{#table.body as |body|}}
+        {{#each (sort-by table.sortDesc model) as |owner|}}
+          {{#body.row onClick=(action 'expand' owner) as |row|}}
+            {{#row.cell}}{{owner.first_name}}{{/row.cell}}
+            {{#row.cell}}{{owner.last_name}}{{/row.cell}}
+            {{#row.cell numeric=true}}{{owner.career_length}}{{/row.cell}}
+            {{#row.cell numeric=true}}{{owner.total_points}}{{/row.cell}}
+            {{#row.cell numeric=true}}{{owner.total_points_against}}{{/row.cell}}
+            {{#row.cell numeric=true}}{{owner.career_wins}}{{/row.cell}}
+            {{#row.cell numeric=true}}{{owner.career_losses}}{{/row.cell}}
+            {{#row.cell numeric=true}}{{owner.max_score}}{{/row.cell}}
+            {{#row.cell numeric=true}}{{owner.min_score}}{{/row.cell}}
+          {{/body.row}}
+        {{/each}}
+      {{/table.body}}
 
-{{/paper-data-table}}
+    {{/paper-data-table}}
+  {{/card.content}}
+{{/paper-card}}

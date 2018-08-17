@@ -1,0 +1,41 @@
+{{#paper-card as |card|}}
+  {{#card.title as |title|}}
+    {{#title.text as |text|}}
+      {{#text.headline}}Trophies{{/text.headline}}
+    {{/title.text}}
+  {{/card.title}}
+  {{#card.content}}
+    <div class="layout-row  layout-align-center-center flex">
+      {{#each owner.championships as |season|}}
+        <div class="flex trophy">
+          {{fa-icon "trophy" size='2x' class='first'}}
+          <h4>{{season.league_year}}</h4>
+        </div>
+      {{/each}}
+      {{#each owner.second_places as |season|}}
+        <div class="flex trophy">
+          {{fa-icon "award" size='2x' class='second'}}
+          <h4>{{season.league_year}}</h4>
+        </div>
+      {{/each}}
+      {{#each owner.third_places as |season|}}
+        <div class="flex trophy">
+          {{fa-icon "star" size='2x' class='third'}}
+          <h4>{{season.league_year}}</h4>
+        </div>
+      {{/each}}
+      {{#each owner.last_places as |season|}}
+        <div class="flex trophy">
+          {{fa-icon "poo" size='2x' class='last'}}
+          <h4>{{season.league_year}}</h4>
+        </div>
+      {{/each}}
+    </div>
+  {{/card.content}}
+  {{#card.actions}}
+    {{#paper-button}}Championship: {{fa-icon "trophy" size='xs' class='first'}}{{/paper-button}}
+    {{#paper-button}}Runner Up: {{fa-icon "award" size='xs'class='second'}}{{/paper-button}}
+    {{#paper-button}}Third: {{fa-icon "star" size='xs' class='third'}}{{/paper-button}}
+    {{#paper-button}}Last: {{fa-icon "poo" size='xs' class='last'}}{{/paper-button}}
+  {{/card.actions}}
+{{/paper-card}}

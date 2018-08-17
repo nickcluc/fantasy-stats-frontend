@@ -15,4 +15,10 @@ export default DS.Model.extend({
   career_losses: DS.attr('number'),
   min_score: DS.attr('number'),
   max_score: DS.attr('number'),
+  championships: DS.hasMany('championships', {async: true, polymorphic: true}),
+  second_places: DS.hasMany('second_places', {async: true, polymorphic: true}),
+  third_places: DS.hasMany('third_places', {async: true, polymorphic: true}),
+  last_places: DS.hasMany('last_places', {async: true, polymorphic: true}),
+  seasons: DS.hasMany('seasons', {async: true, polymorphic: true}),
+  head_to_head_vs_all: DS.attr(),
 })

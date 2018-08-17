@@ -1,0 +1,25 @@
+<h2>Head to Head Records All-Time</h2>
+
+{{#paper-data-table sortProp="name" sortDir="desc" selectable=true as |table|}}
+
+  {{#table.head as |head|}}
+    {{#head.column sortProp="full_name"}}Opponent{{/head.column}}
+    {{#head.column sortProp=""}}Wins{{/head.column}}
+    {{#head.column sortProp="" numeric=true}}Losses{{/head.column}}
+    {{#head.column sortProp=""}}Winning Pct.{{/head.column}}
+  {{/table.head}}
+
+  {{#table.body as |body|}}
+    {{#if (await owners)}}
+      {{#each (sort-by table.sortDesc model) as |owner|}}
+        {{#body.row as |row|}}
+          {{#row.cell}}{{owner.full_name}}{{/row.cell}}
+          {{#row.cell}}{{/row.cell}}
+          {{#row.cell numeric=true}}{{/row.cell}}
+          {{#row.cell numeric=true}}{{/row.cell}}
+        {{/body.row}}
+      {{/each}}
+    {{/if}}
+  {{/table.body}}
+
+{{/paper-data-table}}

@@ -1,21 +1,29 @@
-{{#paper-dialog class="player-dialog" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true fullscreen=true}}
-  {{#paper-toolbar}}
-    {{#paper-toolbar-tools}}
-      <h2>{{owner.full_name}}</h2>
-      <h4>: ({{owner.career_wins}}-{{owner.career_losses}})</h4>
-      <span class="flex"></span>
-      {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
-    {{/paper-toolbar-tools}}
-  {{/paper-toolbar}}
+{{#paper-card
+  class="player-dialog"
+  onClose=(action "closeDialog" "cancel")
+  origin=dialogOrigin
+  clickOutsideToClose=true
+  fullscreen=true as |card|}}
 
-  {{#paper-dialog-content}}
+  {{#card.title as |title|}}
+    {{#title.text as |text|}}
+      {{#text.headline}}{{owner.full_name}}{{/text.headline}}
+      {{#text.subhead}}{{owner.career_wins}}-{{owner.career_losses}}{{/text.subhead}}
+    {{/title.text}}
+    <span class="flex"></span>
+    {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
+  {{/card.title}}
+
+  {{#card.content}}
     {{#paper-tabs
       center=center
       stretch=stretch
       borderBottom=borderBottom
       selected=selectedBasicTab
       onChange=(action (mut selectedBasicTab)) as |tabs|}}
-
+      {{#tabs.tab}}
+        Head to Head
+      {{/tabs.tab}}
       {{#tabs.tab}}
         Seasons
       {{/tabs.tab}}
@@ -28,10 +36,11 @@
     {{/paper-tabs}}
 
     {{#liquid-bind (hash tab=selectedBasicTab) class="md-padding" as |current|}}
-      <div class="layout-row" style='width: 100%'>
         {{#if (eq current.tab 0)}}
-          {{owner-teams-table teams=owner.teams}}
+          {{head-to-head-table model=model}}
         {{else if (eq current.tab 1)}}
+          {{owner-teams-table teams=owner.teams}}
+        {{else if (eq current.tab 2)}}
           {{#if (await owner.team_matchups)}}
             <div class="layout-row flex">
               <div class="flex">
@@ -59,14 +68,9 @@
               </div>
             </div>
           {{/if}}
+        {{else if (eq current.tab 3)}}
+          {{trophy-case owner=owner}}
         {{/if}}
-      </div>
     {{/liquid-bind}}
-  {{/paper-dialog-content}}
-
-  {{#paper-dialog-actions class="layout-row"}}
-    <span class="flex"></span>
-    {{#paper-button onClick=(action "closeDialog" "cancel")}}Cancel{{/paper-button}}
-    {{#paper-button onClick=(action "closeDialog" "ok")}}OK{{/paper-button}}
-  {{/paper-dialog-actions}}
-{{/paper-dialog}}
+  {{/card.content}}
+{{/paper-card}}
