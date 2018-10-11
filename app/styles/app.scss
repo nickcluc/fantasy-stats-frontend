@@ -10,6 +10,7 @@ $color-light-green: map-merge($color-light-green, ('contrastDefaultColor':  $lig
 @import 'ember-paper';
 @import 'paper-data-table';
 @import 'ember-paper-expansion-panel';
+@import 'ember-paper-swiper';
 
 .ember-application {
   background-color: #e0e0e0;
