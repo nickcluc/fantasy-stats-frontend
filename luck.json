@@ -1,1 +1,158 @@
-[{"name":"Andrew Wright","stats":{"wins":44,"losses":55,"lucky_wins":13,"strong_wins":26,"unlucky_losses":7,"lucky_factor":0.29545,"unlucky_factor":-0.12727},"luck_score":0.16818},{"name":"Melissa Clucas","stats":{"wins":52,"losses":46,"lucky_wins":14,"strong_wins":21,"unlucky_losses":7,"lucky_factor":0.26923,"unlucky_factor":-0.15217},"luck_score":0.11706},{"name":"Jeff Donovan","stats":{"wins":56,"losses":42,"lucky_wins":16,"strong_wins":34,"unlucky_losses":10,"lucky_factor":0.28571,"unlucky_factor":-0.2381},"luck_score":0.04761},{"name":"Mike  Avery","stats":{"wins":24,"losses":34,"lucky_wins":6,"strong_wins":13,"unlucky_losses":7,"lucky_factor":0.25,"unlucky_factor":-0.20588},"luck_score":0.04412},{"name":"Daniel Neary","stats":{"wins":38,"losses":59,"lucky_wins":8,"strong_wins":18,"unlucky_losses":13,"lucky_factor":0.21053,"unlucky_factor":-0.22034},"luck_score":-0.00981},{"name":"Lindsay Bennett","stats":{"wins":40,"losses":43,"lucky_wins":10,"strong_wins":25,"unlucky_losses":12,"lucky_factor":0.25,"unlucky_factor":-0.27907},"luck_score":-0.02907},{"name":"evan gutoff","stats":{"wins":55,"losses":42,"lucky_wins":10,"strong_wins":35,"unlucky_losses":10,"lucky_factor":0.18182,"unlucky_factor":-0.2381},"luck_score":-0.05628},{"name":"Joe Brady","stats":{"wins":52,"losses":46,"lucky_wins":10,"strong_wins":31,"unlucky_losses":12,"lucky_factor":0.19231,"unlucky_factor":-0.26087},"luck_score":-0.06856},{"name":"Daniel Morrill","stats":{"wins":55,"losses":43,"lucky_wins":9,"strong_wins":35,"unlucky_losses":10,"lucky_factor":0.16364,"unlucky_factor":-0.23256},"luck_score":-0.06892},{"name":"Nicholas Clucas","stats":{"wins":58,"losses":41,"lucky_wins":7,"strong_wins":41,"unlucky_losses":9,"lucky_factor":0.12069,"unlucky_factor":-0.21951},"luck_score":-0.09882},{"name":"Jason Clucas","stats":{"wins":19,"losses":24,"lucky_wins":2,"strong_wins":14,"unlucky_losses":6,"lucky_factor":0.10526,"unlucky_factor":-0.25},"luck_score":-0.14474},{"name":"Brian MacDougall","stats":{"wins":52,"losses":45,"lucky_wins":13,"strong_wins":34,"unlucky_losses":18,"lucky_factor":0.25,"unlucky_factor":-0.4},"luck_score":-0.15}]
+[
+  {
+    "name": "Andrew Wright",
+    "stats": {
+      "wins": 44,
+      "losses": 55,
+      "lucky_wins": 13,
+      "strong_wins": 26,
+      "unlucky_losses": 7,
+      "lucky_factor": 0.29545,
+      "unlucky_factor": -0.12727
+    },
+    "luck_score": 0.16818
+  },
+  {
+    "name": "Melissa Clucas",
+    "stats": {
+      "wins": 52,
+      "losses": 46,
+      "lucky_wins": 14,
+      "strong_wins": 21,
+      "unlucky_losses": 7,
+      "lucky_factor": 0.26923,
+      "unlucky_factor": -0.15217
+    },
+    "luck_score": 0.11706
+  },
+  {
+    "name": "Jeff Donovan",
+    "stats": {
+      "wins": 56,
+      "losses": 42,
+      "lucky_wins": 16,
+      "strong_wins": 34,
+      "unlucky_losses": 10,
+      "lucky_factor": 0.28571,
+      "unlucky_factor": -0.2381
+    },
+    "luck_score": 0.04761
+  },
+  {
+    "name": "Mike  Avery",
+    "stats": {
+      "wins": 24,
+      "losses": 34,
+      "lucky_wins": 6,
+      "strong_wins": 13,
+      "unlucky_losses": 7,
+      "lucky_factor": 0.25,
+      "unlucky_factor": -0.20588
+    },
+    "luck_score": 0.04412
+  },
+  {
+    "name": "Daniel Neary",
+    "stats": {
+      "wins": 38,
+      "losses": 59,
+      "lucky_wins": 8,
+      "strong_wins": 18,
+      "unlucky_losses": 13,
+      "lucky_factor": 0.21053,
+      "unlucky_factor": -0.22034
+    },
+    "luck_score": -0.00981
+  },
+  {
+    "name": "Lindsay Bennett",
+    "stats": {
+      "wins": 40,
+      "losses": 43,
+      "lucky_wins": 10,
+      "strong_wins": 25,
+      "unlucky_losses": 12,
+      "lucky_factor": 0.25,
+      "unlucky_factor": -0.27907
+    },
+    "luck_score": -0.02907
+  },
+  {
+    "name": "evan gutoff",
+    "stats": {
+      "wins": 55,
+      "losses": 42,
+      "lucky_wins": 10,
+      "strong_wins": 35,
+      "unlucky_losses": 10,
+      "lucky_factor": 0.18182,
+      "unlucky_factor": -0.2381
+    },
+    "luck_score": -0.05628
+  },
+  {
+    "name": "Joe Brady",
+    "stats": {
+      "wins": 52,
+      "losses": 46,
+      "lucky_wins": 10,
+      "strong_wins": 31,
+      "unlucky_losses": 12,
+      "lucky_factor": 0.19231,
+      "unlucky_factor": -0.26087
+    },
+    "luck_score": -0.06856
+  },
+  {
+    "name": "Daniel Morrill",
+    "stats": {
+      "wins": 55,
+      "losses": 43,
+      "lucky_wins": 9,
+      "strong_wins": 35,
+      "unlucky_losses": 10,
+      "lucky_factor": 0.16364,
+      "unlucky_factor": -0.23256
+    },
+    "luck_score": -0.06892
+  },
+  {
+    "name": "Nicholas Clucas",
+    "stats": {
+      "wins": 58,
+      "losses": 41,
+      "lucky_wins": 7,
+      "strong_wins": 41,
+      "unlucky_losses": 9,
+      "lucky_factor": 0.12069,
+      "unlucky_factor": -0.21951
+    },
+    "luck_score": -0.09882
+  },
+  {
+    "name": "Jason Clucas",
+    "stats": {
+      "wins": 19,
+      "losses": 24,
+      "lucky_wins": 2,
+      "strong_wins": 14,
+      "unlucky_losses": 6,
+      "lucky_factor": 0.10526,
+      "unlucky_factor": -0.25
+    },
+    "luck_score": -0.14474
+  },
+  {
+    "name": "Brian MacDougall",
+    "stats": {
+      "wins": 52,
+      "losses": 45,
+      "lucky_wins": 13,
+      "strong_wins": 34,
+      "unlucky_losses": 18,
+      "lucky_factor": 0.25,
+      "unlucky_factor": -0.4
+    },
+    "luck_score": -0.15
+  }
+]
